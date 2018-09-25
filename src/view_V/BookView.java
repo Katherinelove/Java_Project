@@ -56,6 +56,8 @@ public class BookView implements Serializable{
 			case "oparator":
 				showMainView_Oparator();
 				break;
+			case "default":
+				showMainView_default();
 			default:
 				break;
 			}
@@ -64,6 +66,27 @@ public class BookView implements Serializable{
 		}else {
 			out.println("系统已退出！");
 		}
+	}
+
+	private void showMainView_default() {
+		out.println("default主菜单》》》");
+		out.print("1、查询所有书\n2、通过isbn查询\n3、退出");
+		String choose=input.next().trim();
+		switch (choose) {
+		case "1":
+			find_allbooks();
+			break;
+		case "2":
+			find_by_isbn();
+			break;
+		case "3":
+			showWelcome();
+			break;
+		default:
+			showWelcome();
+			break;
+		}
+		
 	}
 
 	public void regeditUser() {
